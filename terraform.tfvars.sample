@@ -1,0 +1,85 @@
+do_token = "digital ocean token"
+
+region = "sfo3"
+
+# These are the SSH Key Fingerprint's. You can get these by logging into your digital ocean account
+# and navigating to Settings -> Security.
+ssh_keys = [
+    "fingerprint-1",
+    "fingerprint-2"
+  ]
+
+# Controller
+plan_controller = "c-4"
+controller_enable_backups = true
+
+# Node
+plan_node = "g-4vcpu-16gb"
+node_enable_backups = true
+node_count = 3
+
+# Backup Server
+plan_backup = "s-1vcpu-1gb"
+backup_enable_backups = true
+backup_volume_size = 100 # GB
+
+# Metrics
+dedicated_metrics_server = true # Set to false to run prometheus & loki on the controller.
+metrics_enable_backups = true
+plan_metrics = "c-2"
+
+# Registry
+dedicated_registry_server = true # Set to false to run the container registry on the controller.
+registry_enable_backups = true
+plan_registry = "s-2vcpu-4gb"
+
+
+##
+# ComputeStacks
+cs_currency = "USD"
+
+# Your ComputeStacks License Key (https://accounts.computestacks.com/store/computestacks)
+license_key = ""
+
+# The region name used by ComputeStacks. Not the DigitalOcean region!
+# Should be lower case, without spaces, and only '-' and '_' characters
+region_name = "digitalocean"
+
+##
+# Domains
+zone_name = "cmptstks.net"
+
+# Each container will receive a unique subdomain from this domain by default.
+# We also need to tell CS what the zone file is in order to provision wildcard SSL for the load balancer.
+cs_app_url = "a.do" # ${cs_app_url}.${zone_name}
+
+# The domain for the controller
+cs_portal_domain = "portal.do" # ${cs_portal_domain}.${zone_name}
+
+# domain for the builtin container registry
+cs_registry_domain = "cr.do" # ${cs_registry_domain}.${zone_name}
+
+# Internal URL for metrics.
+# We ask for a domain so that we may generate a LetsEncrypt certificate for it
+cs_metrics_domain = "metrics.do" # ${cs_metrics_domain}.${zone_name}
+
+##
+# DNS
+use_do_ns = false # Configure the domains for the DigitalOcean droplets.
+zone_ttl = 3600
+
+##
+# SSL Settings
+# use_zerossl = true
+# acme_challenge_method = "http" # or 'cloudflare' for dns challenge.
+
+# # Use Cloudflare Dns Challenge
+# acme_cf_token = "" # API Token
+# acme_cf_account = "" # Account ID
+
+##
+# DO Project Settings
+# You will need to create this project in the DO UI before proceeding!
+do_project_name = "ComputeStacks"
+do_project_description = "ComputeStacks Deployment"
+do_project_env = "Production" # Development, Staging, Production
