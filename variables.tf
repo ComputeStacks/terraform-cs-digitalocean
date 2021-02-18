@@ -12,11 +12,34 @@ variable "ssh_keys" {
 	default = []
 }
 
-variable "cloudinit" {
+##
+# Droplet Image
+
+# Default = Debian 10
+variable "droplet_image_default" {
+	type = bool
+	default = true
+}
+variable "droplet_image_centos" {
+	type = string
+	default = "centos-7-x64"
+}
+variable "droplet_image_debian" {
+	type = string
+	default = "debian-10-x64"
+}
+variable "cloudinit_centos" {
 	type = string
 	default = <<EOF
 #!/usr/bin/bash
 yum -y update && yum -y install epel-release kernel-headers && yum -y install ansible
+EOF
+}
+variable "cloudinit_debian" {
+	type = string
+	default = <<EOF
+#!/usr/bin/bash
+apt update && apt -y install openssl ca-certificates linux-headers-amd64 python3 python3-pip python3-openssl python3-apt && pip3 install ansible
 EOF
 }
 

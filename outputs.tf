@@ -1,5 +1,6 @@
 resource "local_file" "Inventory" {
 	content = templatefile("outputs/inventory.yml.tmpl", {
+		do_token = var.do_token,
 		nodes = digitalocean_droplet.node_cluster.*.name,
 		metrics_count = length(digitalocean_droplet.metrics),
 		registry_count = length(digitalocean_droplet.registries),
@@ -32,7 +33,8 @@ resource "local_file" "Inventory" {
 		use_zerossl = var.use_zerossl,
 		acme_challenge_method = var.acme_challenge_method,
 		acme_cf_account = var.acme_cf_account,
-		acme_cf_token = var.acme_cf_token
+		acme_cf_token = var.acme_cf_token,
+		default_image = var.droplet_image_default
 	})
 	filename = "result/inventory.yml"
 }
