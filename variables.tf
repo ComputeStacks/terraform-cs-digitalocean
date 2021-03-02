@@ -205,3 +205,13 @@ variable "do_project_env" {
 	type = string
 	default = "Production" # Development, Staging, Production
 }
+
+# Admin User
+variable "cs_admin_create" {
+	type = bool
+	default = true
+}
+variable "cs_admin_email" {
+	type = string
+	default = "root@localhost"
+}

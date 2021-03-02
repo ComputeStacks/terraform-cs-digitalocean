@@ -69,6 +69,12 @@ all:
     cs_metrics_domain: ${cs_metrics_domain}
 
     ##
+    # Create Admin Account
+    cs_admin_create: ${cs_admin_create}
+    cs_admin_email: "${cs_admin_email}"
+    cs_admin_password: "${cs_admin_password}"
+
+    ##
     # Management SSL Certificates
     # Controller, Registry, and Metrics will all receive ZeroSSL certificates during installation. By default,
     # this will be done through HTTP validation. If you're using CloudFlare, you may optionally use DNS validation.

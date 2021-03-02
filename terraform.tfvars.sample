@@ -88,3 +88,8 @@ zone_ttl = 3600
 do_project_name = "ComputeStacks"
 do_project_description = "ComputeStacks Deployment"
 do_project_env = "Production" # Development, Staging, Production
+
+##
+# CS User
+cs_admin_create = true
+cs_admin_email = "root@localhost"
