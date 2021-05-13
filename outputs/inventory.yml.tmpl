@@ -3,12 +3,8 @@ all:
   vars:
     cloud_platform: digitalocean
     platform_do_token: "${do_token}" # Used to move failover IP
-%{ if default_image ~}
     ansible_python_interpreter: /usr/bin/python3
     selinux: false
-%{ else ~}
-    selinux: true
-%{ endif ~}
     license_key: ${license_key}
     
     region_name: ${region_name}

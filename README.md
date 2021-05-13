@@ -32,11 +32,7 @@ After terraform runs, you will see 2 newly created files under the `result/` dir
 
 During the initial boot process of your new droplets, ansible will be installed. This can take a few minutes to complete. 
 
-Please ensure that this process has completed _before_ running the ansible package. You can verify that this is completed by:
-
-1) On CentOS, watch the installation process with `tail -f /var/log/yum.log`
-
-2) On Debian, watch the installation process with: `tail -f /var/log/syslog`
+Please ensure that this process has completed _before_ running the ansible package. You can verify that this is completed by: `tail -f /var/log/syslog`
 
 For either distribution, you're waiting to see Ansible finish installing. This will be the last step.
 

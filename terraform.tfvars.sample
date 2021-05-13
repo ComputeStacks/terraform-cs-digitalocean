@@ -2,11 +2,6 @@ do_token = "digital ocean token"
 
 region = "sfo3"
 
-##
-# To use CentOS 7 instead of the default Debian 10 installation,
-# set the following to false:
-droplet_image_default = true
-
 # These are the SSH Key Fingerprint's. You can get these by logging into your digital ocean account
 # and navigating to Settings -> Security.
 ssh_keys = [
