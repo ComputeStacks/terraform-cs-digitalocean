@@ -1,3 +1,7 @@
+```
+NOTE: DigitalOcean has not yet released a Debian 11 image. Until then, please manually update all servers to debian 11 prior to running the ansible package.
+```
+
 # Deploying ComputeStacks on Digital Ocean
 
 Create a `terraform.tfvars` file and adjust the settings appropriately. Specifically, you will:
