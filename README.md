@@ -1,7 +1,3 @@
-```
-NOTE: DigitalOcean has not yet released a Debian 11 image. Until then, please manually update all servers to debian 11 prior to running the ansible package.
-```
-
 # Deploying ComputeStacks on Digital Ocean
 
 Create a `terraform.tfvars` file and adjust the settings appropriately. Specifically, you will:
@@ -12,6 +8,12 @@ Create a `terraform.tfvars` file and adjust the settings appropriately. Specific
 * Choose your region
 
 Additionally, please ensure the DigitalOcean project is created prior to running this package.
+
+## (Optional) Auto-configure DNS
+
+You may wish to automatically configure your DNS records by using a terraform dns provider. Included here is an example file, `dns.tf.sample`. You may copy that to `dns.tf` and adjust accordingly. 
+
+By default, you will see the required DNS settings under `result/`.
 
 ## Setup Terraform
 

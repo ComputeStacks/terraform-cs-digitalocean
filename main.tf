@@ -2,7 +2,7 @@ terraform {
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = "~> 2.11"
+      version = "~> 2.17"
     }
   }
 }
@@ -26,10 +26,10 @@ resource "random_string" "prometheus_password" {
 }
 resource "random_string" "backup_key" {
     length  = 24
-    special = true
+    special = false
 }
 resource "random_string" "app_id" {
-    length  = 8
+    length  = 12
     special = false
 }
 resource "random_string" "network_name" {
@@ -38,5 +38,5 @@ resource "random_string" "network_name" {
 }
 resource "random_string" "cs_admin_password" {
     length  = 12
-    special = true
+    special = false
 }
