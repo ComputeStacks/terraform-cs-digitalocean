@@ -10,6 +10,12 @@ ssh_keys = [
   ]
 
 ##
+# VM SSH Connection Information
+# Generate SSH credentials for terraform
+# `ssh-keygen -q -C "${USER}@cstacks-terraform" -t ed25519 -N '' -f ~/.ssh/cstacks-terraform <<<y >/dev/null 2>&1 && cat ~/.ssh/cstacks-terraform && cat ~/.ssh/cstacks-terraform.pub`
+ssh_connection_priv_key_path = "~/.ssh/cstacks-terraform"
+
+##
 # Network
 droplet_vpc_name = "cs-west01"
 droplet_vpc_net = "10.0.0.0/24"
@@ -47,13 +53,6 @@ plan_nameserver = "s-1vcpu-1gb"
 nameserver_enable_backups = true
 region_nstwo = "nyc3" # Where the second nameserver will be placed
 
-primary_nameserver_zone = "example.org"
-primary_nameserver_domain = "ns1"
-
-secondary_nameserver_zone = "example.net"
-secondary_nameserver_domain = "ns2"
-
-
 ##
 # ComputeStacks
 cs_currency = "USD"
@@ -79,6 +78,13 @@ cs_registry_domain = "cr" # ${cs_registry_domain}.${zone_name}
 # Internal URL for metrics.
 # We ask for a domain so that we may generate a LetsEncrypt certificate for it
 cs_metrics_domain = "metrics" # ${cs_metrics_domain}.${zone_name}
+
+primary_nameserver_zone = "example.org"
+primary_nameserver_domain = "ns1"
+
+secondary_nameserver_zone = "example.net"
+secondary_nameserver_domain = "ns2"
+
 
 ##
 # DO Project Settings
