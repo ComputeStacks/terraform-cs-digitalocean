@@ -1,7 +1,13 @@
 ${cs_portal_domain} A ${controller_public}
-${cs_app_url} A ${floating_ip}
+${cs_portal_domain} A ${controller_public_ipv6}
+${cs_app_url} A ${node_public}
+${cs_app_url} A ${node_public_ipv6}
 *.${cs_app_url} CNAME ${cs_app_url}.
 ${cs_registry_domain} A ${registry_public}
+${cs_registry_domain} A ${registry_public_ipv6}
 ${cs_metrics_domain} A ${metrics_public}
+${cs_metrics_domain} A ${metrics_public_ipv6}
 ${primary_nameserver_domain} A ${nsone_public}
+${primary_nameserver_domain} A ${nsone_public_ipv6}
 ${secondary_nameserver_domain} A ${nstwo_public}
+${secondary_nameserver_domain} A ${nstwo_public_ipv6}

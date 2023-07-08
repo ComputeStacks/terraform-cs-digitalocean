@@ -24,15 +24,14 @@ resource "digitalocean_droplet" "backup" {
   vpc_uuid   = digitalocean_vpc.computestacks.id
 }
 
-resource "digitalocean_droplet" "node_cluster" {
-  count      = var.node_count
+resource "digitalocean_droplet" "node" {
   region     = var.region
   image      = var.droplet_image_debian
-  name       = format("node%s%s", var.node_base_name, count.index + 1)
+  name       = "node100"
   size       = var.plan_node
   backups    = var.node_enable_backups
   monitoring = true
-  ipv6       = false
+  ipv6       = true
   user_data  = var.cloudinit_debian
   ssh_keys   = var.ssh_keys
   vpc_uuid   = digitalocean_vpc.computestacks.id

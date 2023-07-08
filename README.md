@@ -9,9 +9,11 @@ Create a `terraform.tfvars` file and adjust the settings appropriately. Specific
 
 Additionally, please ensure the DigitalOcean project is created prior to running this package.
 
+Copy `providers.tf.sample` to `providers.tf` and adjust.
+
 ## (Optional) Auto-configure DNS
 
-You may wish to automatically configure your DNS records by using a terraform dns provider. Included here is an example file, `dns.tf.sample`. You may copy that to `dns.tf` and adjust accordingly. 
+You may wish to automatically configure your DNS records by using a terraform dns provider. Included here is an example file using CloudFlare, `dns_cloudflare.tf.sample`. You may copy that to `dns_cloudflare.tf` and adjust accordingly. You will also need to adjust your `providers.tf` file to include the CloudFlare modules.
 
 By default, you will see the required DNS settings under `result/`.
 

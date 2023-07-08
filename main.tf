@@ -1,15 +1,3 @@
-terraform {
-  required_providers {
-    digitalocean = {
-      source  = "digitalocean/digitalocean"
-      version = "~> 2.17"
-    }
-  }
-}
-provider "digitalocean" {
-	token = var.do_token
-}
-
 ##
 # Password Generation
 resource "random_string" "pg_password" {

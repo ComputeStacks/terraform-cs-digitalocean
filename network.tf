@@ -8,7 +8,3 @@ resource "digitalocean_vpc" "computestacks_nstwo" {
   region   = var.region_nstwo
   ip_range = var.ns2_vpc_net
 }
-resource "digitalocean_floating_ip" "cluster_vip" {
-  droplet_id = digitalocean_droplet.node_cluster[0].id
-  region     = var.region
-}

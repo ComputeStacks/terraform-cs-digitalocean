@@ -28,7 +28,6 @@ controller_enable_backups = true
 # Node
 plan_node = "g-4vcpu-16gb"
 node_enable_backups = true
-node_count = 3
 
 # Backup Server
 plan_backup = "s-1vcpu-1gb"
@@ -83,7 +82,7 @@ cs_metrics_domain = "metrics" # ${cs_metrics_domain}.${zone_name}
 
 ##
 # DO Project Settings
-# You will need to create this project in the DO UI before proceeding!
+# You will need to create this project in the DO UI before proceeding!!!
 do_project_name = "ComputeStacks"
 do_project_description = "ComputeStacks Deployment"
 do_project_env = "Production" # Development, Staging, Production
@@ -91,3 +90,8 @@ do_project_env = "Production" # Development, Staging, Production
 ##
 # CS User
 cs_admin_email = "admin@cstacks.local"
+
+##
+# Cloudflare (Optional)
+# cloudflare_api_token = ""
+# cloudflare_account_id = ""
